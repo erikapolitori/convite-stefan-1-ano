@@ -238,3 +238,46 @@ input:focus, select:focus {
     margin-top: -15px; /* Puxa um pouquinho para cima, para ficar colado no nome */
     text-transform: lowercase; /* Mantém tudo em minúsculo para seguir o estilo */
 }
+/* --- ESTILO GERAL (Mantenha o que você já tem para PC) --- */
+body {
+    background-image: url('https://wallpapercave.com/wp/wp11796393.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #0b1e3b; /* Azul escuro caso a imagem falhe */
+
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* --- O AJUSTE MÁGICO PARA CELULARES (Media Query) --- */
+@media (max-width: 600px) {
+    body {
+        /* 1. Mudamos para uma imagem de textura (pergaminho antigo) */
+        background-image: url('https://img.freepik.com/fotos-gratis/textura-de-papel-antigo-e-vintage_23-2148871668.jpg');
+        
+        /* 2. Fazemos essa textura cobrir a tela inteira, sem barras vazias */
+        background-size: cover;
+        background-position: center center;
+        background-attachment: scroll; /* Melhora a performance em alguns celulares */
+        
+        /* 3. Ajuste de espaçamento para ficar mais colado nas bordas */
+        padding: 10px;
+    }
+
+    /* 4. Vamos garantir que o topo (com o logo) tenha uma área de destaque */
+    .topo-stefan {
+        background-color: rgba(11, 30, 59, 0.8); /* Um leve azul transparente atrás do logo */
+        border-radius: 10px;
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+}
