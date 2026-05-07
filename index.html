@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite One Piece - Stefan 1 Ano</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&family=Pirata+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container total">
+        
+        <header class="topo-stefan">
+            <div class="moldura-foto">
+                <img src="stefan.png.png" alt="Foto do Stefan na Praia" class="foto-stefan">
+            </div>
+            <h1 class="nome-stefan">stefan</h1>
+            <h2 class="idade-estefan-estilizada">1 ano</h2>
+        </header>
+
+        <main class="cartao-info stefan-pirata">
+            <p class="subtitulo">A Grande Jornada!</p>
+            <h3 class="nome-festa">Aniversário do Pirata Stefan</h3>
+            
+            <div class="mensagem-one-piece">
+                <p>⚓ Içamento de Âncoras! ⚓</p>
+                <p>Olá, tripulação de amigos e família! ✨</p>
+                <p>Nosso capitão Stefan está completando seu primeiro ano e estamos organizando uma festa lendária!</p>
+                <p>O tesouro está guardado para vocês...</p>
+                <p><strong>Zarparemos no dia:</strong> 📅 [COLOQUE A NOVA DATA AQUI] 🕒 [HORÁRIO]</p>
+            </div>
+<section class="cartao-info stefan-pirata">
+    <h3 class="titulo-form">Informações do Evento</h3>
+    
+    <div class="info-endereco" style="text-align: center; margin-bottom: 15px;">
+        <p>📍 <strong>Local:</strong> Festa do Stefan</p>
+        <p>Rua São Thiago, 756 - São Manoel</p>
+        <p>Americana/SP</p>
+    </div>
+
+    <div class="mapa-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.8521021461973!2d-47.31174622469443!3d-22.769931879354784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b982f6f59c95%3A0x67c2957b44766e4a!2sR.%20S%C3%A3o%20Thiago%2C%20756%20-%20S%C3%A3o%20Manoel%2C%20Americana%20-%20SP%2C%2013472-170!5e0!3m2!1spt-BR!2sbr!4v1714686450000!5m2!1spt-BR!2sbr" 
+            width="100%" 
+            height="250" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <div class="botoes-mapa-horizontal" style="margin-top: 15px;">
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+São+Thiago,+756,+Americana+-+SP" target="_blank" class="btn-mapa google miniatura">
+            Google Maps
+        </a>
+        <a href="https://waze.com/ul?q=Rua+São+Thiago+756+Americana+SP&navigate=yes" target="_blank" class="btn-mapa waze miniatura">
+            Waze
+        </a>
+    </div>
+
+    <button onclick="copiarEndereco()" class="btn-mapa copiar" style="margin-top: 10px; width: 100%;">
+        COPIAR ENDEREÇO
+    </button>
+</section>
+            <button class="botao-confirmar-pirata" onclick="mostrarFormulario()">
+            GARANTIR MEU LUGAR NO NAVIO
+        </button>
+
+        <div id="formulario-rsvp" class="form-container" style="display: none;">
+            <h4 class="titulo-form">Lista de Tripulantes</h4>
+            
+            <form id="meuForm">
+                <div class="campo">
+                    <label>Nome do Pirata:</label>
+                    <input type="text" id="nomeConvidado" placeholder="Seu nome completo" required>
+                </div>
+
+                <div class="campo">
+                    <label>Vai levar acompanhantes?</label>
+<div class="campo-grupo">
+    <div class="campo">
+        <label>Adultos (incluindo você):</label>
+        <input type="number" id="qtdAdultos" value="1" min="1">
+    </div>
+
+    <div class="campo">
+        <label>Crianças:</label>
+        <input type="number" id="qtdCriancas" value="0" min="0">
+    </div>
+</div>                
+</div>
+
+                <div class="campo">
+                    <label>Confirma sua presença?</label>
+                    <select id="status">
+                        <option value="sim">Sim, estarei lá! ⚓</option>
+                        <option value="não">Infelizmente não poderei ir</option>
+                    </select>
+                </div>
+
+                <button type="button" class="botao-enviar" onclick="enviarDados()">
+                    ENVIAR PARA O CAPITÃO
+                </button>
+            </form>
+            
+            <p id="mensagemSucesso" style="display:none; color: #3ec9a7; margin-top: 15px;">
+                Confirmado! Dados enviados para o Stefan.
+            </p>
+        </div>
+            
+        </main>
+    </div>
+<script>
+    // Função para fazer o formulário aparecer quando clicar no botão amarelo
+    function mostrarFormulario() {
+        var form = document.getElementById("formulario-rsvp");
+        form.style.display = "block";
+        // Faz a página rolar suavemente até o formulário
+        form.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Função que simula o envio dos dados
+    function enviarDados() {
+    var nome = document.getElementById("nomeConvidado").value;
+    var adultos = document.getElementById("qtdAdultos").value;
+    var criancas = document.getElementById("qtdCriancas").value;
+    
+    if(nome === "") {
+        alert("Por favor, digite seu nome, pirata!");
+        return;
+    }
+
+    // Mostra no "painel de controle" do navegador (F12) o que foi capturado
+    console.log("Tripulante: " + nome);
+    console.log("Adultos: " + adultos);
+    console.log("Crianças: " + criancas);
+    
+    document.getElementById("meuForm").style.display = "none";
+    
+    // Personaliza a mensagem final com a contagem
+    var msgFinal = document.getElementById("mensagemSucesso");
+    msgFinal.innerHTML = "Confirmado! " + nome + ", anotamos sua tripulação com " + criancas + " criança(s). ⚓";
+    msgFinal.style.display = "block";
+}
+function copiarEndereco() {
+    // Endereço exato da festa
+    const endereco = "Rua São Thiago, 756, São Manoel, Americana/SP";
+    
+    navigator.clipboard.writeText(endereco).then(() => {
+        // Alerta personalizado com o tema
+        alert("Endereço copiado! Prepare-se para zarpar, pirata!");
+    });
+}
+</script>
+</body>
+</html>
