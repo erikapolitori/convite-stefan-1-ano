@@ -1,16 +1,15 @@
 /* --- ESTILO GERAL: MUDANDO DO AMALERINHO PARA MAR --- */
+/* --- ESTILO GERAL (Seu Fundo para PC e Tablet Lardo) --- */
 body {
-    /* Mantemos o seu link */
+    /* 1. Mantenha a sua imagem deitada original para o PC */
     background-image: url('https://wallpapercave.com/wp/wp11796393.jpg');
     
-    /* O SEGREDO ESTÁ AQUI: */
-    background-size: cover; 
-    background-position: top center; /* Garante que o topo da imagem (onde costuma estar o logo) apareça primeiro */
-    background-attachment: fixed;
+    /* 2. Configurações para cobrir toda a tela no PC */
+    background-size: cover;
+    background-position: center center; /* Tenta manter o Thousand Sunny no centro */
+    background-attachment: fixed; /* O fundo fica parado ao rolar (efeito chique) */
     background-repeat: no-repeat;
-    
-    /* Adicionamos uma cor de fundo caso a imagem demore a carregar */
-    background-color: #0b1e3b; 
+    background-color: #0b1e3b; /* Azul marinho caso a imagem demore a carregar */
 
     font-family: Arial, sans-serif;
     display: flex;
@@ -18,7 +17,25 @@ body {
     align-items: center;
     padding: 20px;
     margin: 0;
-    min-height: 100vh; /* Garante que o fundo cubra a tela toda mesmo se tiver pouco conteúdo */
+    min-height: 100vh;
+}
+
+/* --- O AJUSTE MÁGICO APENAS PARA CELULARES (Media Query) --- */
+/* Se a tela for menor ou igual a 600px (maioria dos celulares), aplique isto: */
+@media (max-width: 600px) {
+    body {
+        /* 3. AQUI NÓS TROCAMOS O FUNDO! */
+        /* Use a imagem vertical que você salvou na sua pasta */
+        background-image: url('vermelho.webp'); 
+        
+        /* 4. Ajustes para o fundo vertical cobrir a tela do celular */
+        background-size: cover; /* Faz a imagem vertical cobrir a tela sem esticar */
+        background-position: top center; /* Garante que o topo da imagem (onde pode estar o logo) apareça */
+        background-attachment: scroll; /* Melhora a performance em alguns celulares */
+        
+        /* 5. Ajuste de espaçamento para ficar mais colado nas bordas no celular */
+        padding: 10px;
+    }
 }
 
 /* Ajuste específico para Celulares (Media Query) */
