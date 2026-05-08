@@ -1,50 +1,31 @@
 /* --- ESTILO GERAL: MUDANDO DO AMALERINHO PARA MAR --- */
 /* --- ESTILO GERAL (Seu Fundo para PC e Tablet Lardo) --- */
+/* --- ESTILO PARA COMPUTADOR (Mantenha como está) --- */
 body {
-    /* 1. Mantenha a sua imagem deitada original para o PC */
     background-image: url('https://wallpapercave.com/wp/wp11796393.jpg');
-    
-    /* 2. Configurações para cobrir toda a tela no PC */
     background-size: cover;
-    background-position: center center; /* Tenta manter o Thousand Sunny no centro */
-    background-attachment: fixed; /* O fundo fica parado ao rolar (efeito chique) */
+    background-position: center center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    background-color: #0b1e3b; /* Azul marinho caso a imagem demore a carregar */
-
+    background-color: #0b1e3b;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     margin: 0;
-    min-height: 100vh;
 }
 
-/* --- O AJUSTE MÁGICO APENAS PARA CELULARES (Media Query) --- */
-/* Se a tela for menor ou igual a 600px (maioria dos celulares), aplique isto: */
+/* --- AJUSTE PARA CELULAR (Onde vamos sumir com a "flor") --- */
 @media (max-width: 600px) {
     body {
-        /* 3. AQUI NÓS TROCAMOS O FUNDO! */
-        /* Use a imagem vertical que você salvou na sua pasta */
-        background-image: url('vermelho.webp'); 
+        /* O !important garante que a imagem do mapa saia e entre a vermelha */
+        background-image: url('vermelho.webp') !important; 
         
-        /* 4. Ajustes para o fundo vertical cobrir a tela do celular */
-        background-size: cover; /* Faz a imagem vertical cobrir a tela sem esticar */
-        background-position: top center; /* Garante que o topo da imagem (onde pode estar o logo) apareça */
-        background-attachment: scroll; /* Melhora a performance em alguns celulares */
-        
-        /* 5. Ajuste de espaçamento para ficar mais colado nas bordas no celular */
+        background-size: cover;
+        background-position: center center;
+        background-attachment: scroll;
         padding: 10px;
-    }
-}
-
-/* Ajuste específico para Celulares (Media Query) */
-@media (max-width: 600px) {
-    body {
-        /* No celular, em vez de esticar, fazemos a imagem se ajustar à largura */
-        background-size: contain; 
-        background-position: top center;
-        background-color: #0b1e3b; /* A cor azul preenche o que sobrar embaixo */
     }
 }
 
