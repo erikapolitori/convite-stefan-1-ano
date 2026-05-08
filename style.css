@@ -26,7 +26,7 @@ body {
     body {
         /* 3. AQUI NÓS TROCAMOS O FUNDO! */
         /* Use a imagem vertical que você salvou na sua pasta */
-        background-image: url('https://wallpaperaccess.com/full/1977593.jpg'); 
+        background-image: url('vermelho.webp'); 
         
         /* 4. Ajustes para o fundo vertical cobrir a tela do celular */
         background-size: cover; /* Faz a imagem vertical cobrir a tela sem esticar */
