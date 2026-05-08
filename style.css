@@ -20,7 +20,7 @@ body {
 @media (max-width: 600px) {
     body {
         /* O !important garante que a imagem do mapa saia e entre a vermelha */
-        background-image: url('vermelho.webp') !important; 
+        background-image: url('azul.jpg') !important; 
         
         background-size: cover;
         background-position: center center;
@@ -28,7 +28,24 @@ body {
         padding: 10px;
     }
 }
+/* --- AJUSTE PARA REMOVER O FUNDO AZUL DO TOPO --- */
+@media (max-width: 600px) {
+    .topo-stefan {
+        /* Isso remove a cor azul e deixa o fundo vermelho aparecer 100% */
+        background-color: transparent !important;
+        
+        /* Removemos também sombras ou bordas que possam estar "sujando" o visual */
+        box-shadow: none !important;
+        border: none !important;
 
+        /* Mantemos o alinhamento para o Stefan não sair do lugar */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+    }
+}
 .total {
     max-width: 500px;
     text-align: center;
