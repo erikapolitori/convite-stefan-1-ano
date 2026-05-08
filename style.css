@@ -16,36 +16,33 @@ body {
     margin: 0;
 }
 
-/* --- AJUSTE PARA CELULAR (Onde vamos sumir com a "flor") --- */
+/* --- AJUSTE PARA CELULAR (SUBSTITUA O ANTIGO POR ESTE) --- */
 @media (max-width: 600px) {
     body {
-        /* O !important garante que a imagem do mapa saia e entre a vermelha */
-        background-image: url('mapa2.png') !important; 
+        /* Limpa o mapa azul e coloca a imagem vermelha */
+        background-image: url('vermelho.webp') !important; 
         
-        background-size: cover;
-        background-position: center center;
-        background-attachment: scroll;
+        /* 'contain' faz o desenho caber na largura sem esticar */
+        background-size: contain !important;
+        
+        /* Posiciona no topo para o logo aparecer primeiro */
+        background-position: top center !important;
+        background-repeat: no-repeat !important;
+        
+        /* Cor que completa o fundo onde a imagem acaba */
+        background-color: #e63946 !important; 
+        
+        background-attachment: scroll !important;
         padding: 10px;
     }
-}
-/* --- AJUSTE PARA REMOVER O FUNDO AZUL DO TOPO --- */
-@media (max-width: 600px) {
-    .topo-stefan {
-        /* Isso remove a cor azul e deixa o fundo vermelho aparecer 100% */
-        background-color: transparent !important;
-        
-        /* Removemos também sombras ou bordas que possam estar "sujando" o visual */
-        box-shadow: none !important;
-        border: none !important;
 
-        /* Mantemos o alinhamento para o Stefan não sair do lugar */
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 20px;
+    .topo-stefan {
+        background-color: transparent !important;
+        /* Esse espaço empurra o Stefan para baixo do logo One Piece */
+        margin-top: 180px !important; 
     }
 }
+
 .total {
     max-width: 500px;
     text-align: center;
