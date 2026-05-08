@@ -113,45 +113,49 @@
         </main>
     </div>
 <script>
-    // Função para fazer o formulário aparecer quando clicar no botão amarelo
-    function mostrarFormulario() {
-        var form = document.getElementById("formulario-rsvp");
-        form.style.display = "block";
-        // Faz a página rolar suavemente até o formulário
-        form.scrollIntoView({ behavior: 'smooth' });
-    }
+function enviarDados() {
+    // 1. O link do seu Apps Script
+    const urlPlanilha = "https://script.google.com/macros/s/AKfycbzNyNKnJsnZhfGQIerFFpzASPocElVyTgFChF_rHHFGn7ttti40Md7v0CvE-_2WN_cj/exec";
 
-    // Função que simula o envio dos dados
-    function enviarDados() {
-    var nome = document.getElementById("nomeConvidado").value;
-    var adultos = document.getElementById("qtdAdultos").value;
-    var criancas = document.getElementById("qtdCriancas").value;
-    
-    if(nome === "") {
-        alert("Por favor, digite seu nome, pirata!");
+    // 2. Coleta os dados usando os IDs EXATOS do seu HTML
+    const dados = {
+        nome: document.getElementById('nomeConvidado').value,
+        adultos: document.getElementById('qtdAdultos').value,
+        criancas: document.getElementById('qtdCriancas').value,
+        status: document.getElementById('status').value
+    };
+
+    // Validação simples para não enviar nome vazio
+    if (dados.nome === "") {
+        alert("Por favor, digite o nome do pirata!");
         return;
     }
 
-    // Mostra no "painel de controle" do navegador (F12) o que foi capturado
-    console.log("Tripulante: " + nome);
-    console.log("Adultos: " + adultos);
-    console.log("Crianças: " + criancas);
-    
-    document.getElementById("meuForm").style.display = "none";
-    
-    // Personaliza a mensagem final com a contagem
-    var msgFinal = document.getElementById("mensagemSucesso");
-    msgFinal.innerHTML = "Confirmado! " + nome + ", anotamos sua tripulação com " + criancas + " criança(s). ⚓";
-    msgFinal.style.display = "block";
-}
-function copiarEndereco() {
-    // Endereço exato da festa
-    const endereco = "Rua São Thiago, 756, São Manoel, Americana/SP";
-    
-    navigator.clipboard.writeText(endereco).then(() => {
-        // Alerta personalizado com o tema
-        alert("Endereço copiado! Prepare-se para zarpar, pirata!");
+    // 3. Envia para a planilha
+    fetch(urlPlanilha, {
+        method: 'POST',
+        mode: 'no-cors',
+        cache: 'no-cache',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dados)
+    })
+    .then(() => {
+        alert("Dados enviados com sucesso ao Capitão! ⚓");
+        // Limpa o formulário e esconde
+        document.getElementById('meuForm').reset();
+        document.getElementById('formulario-rsvp').style.display = 'none';
+    })
+    .catch(err => {
+        console.error("Erro:", err);
+        alert("Houve um erro ao enviar. Tente novamente!");
     });
+}
+
+// Função para mostrar o formulário quando clicar no primeiro botão
+function mostrarFormulario() {
+    document.getElementById('formulario-rsvp').style.display = 'block';
 }
 </script>
 </body>
