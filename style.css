@@ -20,7 +20,7 @@ body {
 @media (max-width: 600px) {
     body {
         /* O !important garante que a imagem do mapa saia e entre a vermelha */
-        background-image: url('luffy.jpg') !important; 
+        background-image: url('mapa2.png') !important; 
         
         background-size: cover;
         background-position: center center;
