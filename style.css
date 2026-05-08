@@ -96,7 +96,7 @@ body {
 .nome-stefan {
     font-family: 'Pirata One', cursive; /* Fonte que baixamos para piratas */
     color: #e63946; /* Vermelho do bando do Luffy */
-    font-size: 70px;
+    font-size: 100px;
     margin: 10px 0;
     text-transform: lowercase;
     text-shadow: 2px 2px 0px #ffd100; /* Borda amarela no nome */
@@ -105,7 +105,7 @@ body {
 .idade-stefan {
     font-family: 'Pirata One', cursive;
     color: #ffd100; /* Amarelo dourado */
-    font-size: 30px;
+    font-size: 80px;
     margin-top: -10px;
 }
 
