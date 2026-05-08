@@ -20,7 +20,7 @@ body {
 @media (max-width: 600px) {
     body {
         /* Limpa o mapa azul e coloca a imagem vermelha */
-        background-image: url('vermelho.webp') !important; 
+        background-image: url('mapa2.png') !important; 
         
         /* 'contain' faz o desenho caber na largura sem esticar */
         background-size: contain !important;
