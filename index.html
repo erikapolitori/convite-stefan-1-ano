@@ -13,7 +13,7 @@
         
         <header class="topo-stefan">
             <div class="moldura-foto">
-                <img src="stefan.png.png" alt="Foto do Stefan na Praia" class="foto-stefan">
+                <img src="stefan1.png" alt="Foto do Stefan na Praia" class="foto-stefan">
             </div>
             <h1 class="nome-stefan">stefan</h1>
             <h2 class="idade-estefan-estilizada">1 ano</h2>
@@ -157,6 +157,28 @@ function enviarDados() {
 function mostrarFormulario() {
     document.getElementById('formulario-rsvp').style.display = 'block';
 }
+</script>
+<audio id="musica-tema" loop>
+    <source src="musica.mp3.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+</audio>
+
+<script>
+    // Função para dar o play na música
+    function iniciarMusica() {
+        const musica = document.getElementById('musica-tema');
+        musica.play().catch(error => {
+            console.log("Autoplay bloqueado. Aguardando interação.");
+        });
+        
+        // Remove os ouvintes de evento após a música começar
+        document.removeEventListener('click', iniciarMusica);
+        document.removeEventListener('touchstart', iniciarMusica);
+    }
+
+    // Como o autoplay é bloqueado, a música começa no primeiro clique do convidado
+    document.addEventListener('click', iniciarMusica);
+    document.addEventListener('touchstart', iniciarMusica); // Para funcionar no celular
 </script>
 </body>
 </html>
