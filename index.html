@@ -73,7 +73,7 @@
             
             <form id="meuForm">
                 <div class="campo">
-                    <label>Nome do Pirata (ex: Jony, Erika, Logan e Stefan):</label>
+                    <label>Nome do Pirata (ex: Luffy, Zoro e Sanji):</label>
                     <input type="text" id="nomeConvidado" placeholder="Seu nome completo" required>
                 </div>
 
@@ -164,21 +164,45 @@ function mostrarFormulario() {
 </audio>
 
 <script>
-    // Função para dar o play na música
-    function iniciarMusica() {
-        const musica = document.getElementById('musica-tema');
-        musica.play().catch(error => {
-            console.log("Autoplay bloqueado. Aguardando interação.");
-        });
-        
-        // Remove os ouvintes de evento após a música começar
-        document.removeEventListener('click', iniciarMusica);
-        document.removeEventListener('touchstart', iniciarMusica);
-    }
+  function iniciarMusica() {
+    const musica = document.getElementById('musica-tema');
+    
+    // 1. Primeiro definimos o volume (0.5 é 50%)
+    musica.volume = 0.5; 
+    
+    // 2. Depois mandamos tocar
+    musica.play().catch(error => {
+        console.log("Autoplay bloqueado. Aguardando interação.");
+    });
+
+    // 3. Removemos os ouvintes para não reiniciar a música toda hora
+    document.removeEventListener('click', iniciarMusica);
+    document.removeEventListener('touchstart', iniciarMusica);
+    window.removeEventListener('scroll', iniciarMusica);
+}
 
     // Como o autoplay é bloqueado, a música começa no primeiro clique do convidado
     document.addEventListener('click', iniciarMusica);
     document.addEventListener('touchstart', iniciarMusica); // Para funcionar no celular
+</script>
+<script>
+    const musica = document.getElementById('musica-tema');
+
+    function iniciarMusica() {
+        musica.play().catch(error => {
+            console.log("Aguardando interação real...");
+        });
+        
+        // Remove os ouvintes para a música não tentar "recomeçar" a cada toque
+        document.removeEventListener('click', iniciarMusica);
+        document.removeEventListener('touchstart', iniciarMusica);
+        document.removeEventListener('scroll', iniciarMusica);
+    }
+
+    // Aciona a música com clique, toque (passar o dedo) ou rolar a tela
+    document.addEventListener('click', iniciarMusica);
+    document.addEventListener('touchstart', iniciarMusica); 
+    window.addEventListener('scroll', iniciarMusica);
 </script>
 </body>
 </html>
