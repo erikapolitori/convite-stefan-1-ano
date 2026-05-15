@@ -186,22 +186,24 @@ function mostrarFormulario() {
     document.addEventListener('touchstart', iniciarMusica); // Para funcionar no celular
 </script>
 <script>
+    // 1. Você precisa desta linha aqui para o código achar o áudio
     const musica = document.getElementById('musica-tema');
 
     function iniciarMusica() {
+        musica.volume = 0.5; // Deixa o som agradável
         musica.play().catch(error => {
             console.log("Aguardando interação real...");
         });
-        
-        // Remove os ouvintes para a música não tentar "recomeçar" a cada toque
+
+        // Remove os ouvintes para não tentar recomeçar
         document.removeEventListener('click', iniciarMusica);
         document.removeEventListener('touchstart', iniciarMusica);
-        document.removeEventListener('scroll', iniciarMusica);
+        window.removeEventListener('scroll', iniciarMusica);
     }
 
-    // Aciona a música com clique, toque (passar o dedo) ou rolar a tela
+    // Aciona a música com clique, toque ou rolar a tela
     document.addEventListener('click', iniciarMusica);
-    document.addEventListener('touchstart', iniciarMusica); 
+    document.addEventListener('touchstart', iniciarMusica);
     window.addEventListener('scroll', iniciarMusica);
 </script>
 </body>
