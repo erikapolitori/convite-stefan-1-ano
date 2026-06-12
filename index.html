@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convite One Piece - Stefan 1 Ano</title>
+    <title>Convite One Piece - Logan e Stefan</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&family=Pirata+One&display=swap" rel="stylesheet">
 </head>
@@ -13,28 +13,36 @@
         
         <header class="topo-stefan">
             <div class="moldura-foto">
-                <img src="stefan1.png" alt="Foto do Stefan na Praia" class="foto-stefan">
+                <img src="Logan-Stefan.png" alt="Foto do Logan e do Stefan" class="foto-stefan">
             </div>
-            <h1 class="nome-stefan">stefan</h1>
-            <h2 class="idade-estefan-estilizada">1 ano</h2>
+            <h1 class="nome-stefan">Logan e Stefan</h1>
+            <h2 class="idade-estefan-estilizada">8 anos • 1 ano</h2>
         </header>
 
         <main class="cartao-info stefan-pirata">
-            <p class="subtitulo">A Grande Jornada!</p>
-            <h3 class="nome-festa">Aniversário do Pirata Stefan</h3>
+            <p class="subtitulo">⚓ O Chamado da Grand Line ⚓</p>
+            <h3 class="nome-festa">Tripulação Logan & Stefan</h3>
             
             <div class="mensagem-one-piece">
-                <p>⚓ Içamento de Âncoras! ⚓</p>
-                <p>Olá, tripulação de amigos e família! ✨</p>
-                <p>Nosso capitão Stefan está completando seu primeiro ano e estamos organizando uma festa lendária!</p>
-                <p>O tesouro está guardado para vocês...</p>
-                <p><strong>Zarparemos no dia:</strong> 📅 [COLOQUE A NOVA DATA AQUI] 🕒 [HORÁRIO]</p>
-            </div>
+    <p>⚓ Içamento de Âncoras! ⚓</p>
+
+    <p>Olá, tripulação de amigos e família! ✨</p>
+
+    <p>Os capitães <strong>Logan</strong> e <strong>Stefan</strong> estão reunindo sua tripulação para embarcar em uma aventura inesquecível!</p>
+
+    <p>O mapa foi traçado, os tesouros estão escondidos e a Grand Line aguarda por corações corajosos.</p>
+
+    <p><strong>🚢 Zarparemos rumo à Grand Line em:</strong></p>
+
+    <p>📅 [DATA]</p>
+    <p>🕒 [HORÁRIO]</p>
+</div>
+
 <section class="cartao-info stefan-pirata">
-    <h3 class="titulo-form">Informações do Evento</h3>
+    <h3 class="titulo-form">⚓ Informações da Expedição</h3>
     
     <div class="info-endereco" style="text-align: center; margin-bottom: 15px;">
-        <p>📍 <strong>Local:</strong> Festa do Stefan</p>
+        <p>📍 <strong>Porto de Embarque:</strong> Festa Logan & Stefan</p>
         <p>Rua São Thiago, 756 - São Manoel</p>
         <p>Americana/SP</p>
     </div>
@@ -64,8 +72,43 @@
         COPIAR ENDEREÇO
     </button>
 </section>
+
+<div class="missao-tripulacao">
+
+<h4 class="titulo-form">🏴‍☠️ Missão Especial da Tripulação</h4>
+
+<p>
+Para fazer parte do <strong>Bando do Chapéu de Palha</strong>,
+venha no clima da aventura e traga o seu chapéu!
+</p>
+
+<p>
+<strong>Nenhum pirata navega sozinho.</strong>
+</p>
+
+<p class="lema-japones">
+仲間と冒険
+</p>
+
+</div>
+<div class="missao-tripulacao">
+
+<h4 class="titulo-form">🎁 Tesouro da Tripulação</h4>
+
+<p>
+Durante esta aventura, alguns tesouros especiais aguardam os tripulantes mais corajosos.
+</p>
+
+<p>
+<strong>
+Fique atento... a Grand Line sempre reserva surpresas para aqueles que embarcam em sua jornada.
+</strong>
+</p>
+
+</div>
+
             <button class="botao-confirmar-pirata" onclick="mostrarFormulario()">
-            GARANTIR MEU LUGAR NO NAVIO
+            ACEITAR O CHAMADO DA GRAND LINE
         </button>
 
         <div id="formulario-rsvp" class="form-container" style="display: none;">
@@ -73,8 +116,8 @@
             
             <form id="meuForm">
                 <div class="campo">
-                    <label>Nome do Pirata (ex: Luffy, Zoro e Sanji):</label>
-                    <input type="text" id="nomeConvidado" placeholder="Seu nome completo" required>
+                    <label>Nome dos Tripulantes (ex: Luffy, Zoro e Sanji):</label>
+                    <input type="text" id="nomeConvidado" placeholder="Tripulantes" required>
                 </div>
 
                 <div class="campo">
@@ -93,20 +136,20 @@
 </div>
 
                 <div class="campo">
-                    <label>Confirma sua presença?</label>
+                    <label>Aceita embarcar nesta aventura?</label>
                     <select id="status">
-                        <option value="sim">Sim, estarei lá! ⚓</option>
-                        <option value="não">Infelizmente não poderei ir</option>
+                        <option value="sim">⚓ Sim, zarparei com a tripulação!</option>
+                        <option value="não">🏝️ Ficarei em terra firme desta vez.</option>
                     </select>
                 </div>
 
                 <button type="button" class="botao-enviar" onclick="enviarDados()">
-                    ENVIAR PARA O CAPITÃO
+                    ENVIAR PARA OS CAPITÃES
                 </button>
             </form>
             
             <p id="mensagemSucesso" style="display:none; color: #3ec9a7; margin-top: 15px;">
-                Confirmado! Dados enviados para o Stefan.
+                Confirmado! Dados enviados para os capitães Logan e Stefan.
             </p>
         </div>
             
@@ -127,7 +170,7 @@ function enviarDados() {
 
     // Validação simples para não enviar nome vazio
     if (dados.nome === "") {
-        alert("Por favor, digite o nome do pirata!");
+        alert("Por favor, digite o nome dos tripulantes!");
         return;
     }
 
@@ -142,7 +185,7 @@ function enviarDados() {
         body: JSON.stringify(dados)
     })
     .then(() => {
-        alert("Dados enviados com sucesso ao Capitão! ⚓");
+        alert("Dados enviados com sucesso aos capitães! ⚓");
         // Limpa o formulário e esconde
         document.getElementById('meuForm').reset();
         document.getElementById('formulario-rsvp').style.display = 'none';
@@ -157,6 +200,18 @@ function enviarDados() {
 function mostrarFormulario() {
     document.getElementById('formulario-rsvp').style.display = 'block';
 }
+
+function copiarEndereco() {
+    const endereco = "Rua São Thiago, 756 - São Manoel, Americana/SP";
+
+    navigator.clipboard.writeText(endereco)
+        .then(() => {
+            alert("Endereço copiado!");
+        })
+        .catch(() => {
+            alert("Endereço: " + endereco);
+        });
+}
 </script>
 <audio id="musica-tema" loop>
     <source src="musica.mp3.mp3" type="audio/mpeg">
@@ -166,45 +221,23 @@ function mostrarFormulario() {
 <script>
   function iniciarMusica() {
     const musica = document.getElementById('musica-tema');
-    
-    // 1. Primeiro definimos o volume (0.5 é 50%)
-    musica.volume = 0.5; 
-    
-    // 2. Depois mandamos tocar
-    musica.play().catch(error => {
-        console.log("Autoplay bloqueado. Aguardando interação.");
-    });
 
-    // 3. Removemos os ouvintes para não reiniciar a música toda hora
-    document.removeEventListener('click', iniciarMusica);
-    document.removeEventListener('touchstart', iniciarMusica);
-    window.removeEventListener('scroll', iniciarMusica);
+    musica.volume = 0.5;
+
+    musica.play()
+        .then(() => {
+            document.removeEventListener('click', iniciarMusica);
+            document.removeEventListener('touchstart', iniciarMusica);
+            window.removeEventListener('scroll', iniciarMusica);
+        })
+        .catch(() => {
+            console.log("A música ainda não foi liberada pelo navegador.");
+        });
 }
 
-    // Como o autoplay é bloqueado, a música começa no primeiro clique do convidado
-    document.addEventListener('click', iniciarMusica);
-    document.addEventListener('touchstart', iniciarMusica); // Para funcionar no celular
-</script>
-<script>
-    // 1. Você precisa desta linha aqui para o código achar o áudio
-    const musica = document.getElementById('musica-tema');
-
-    function iniciarMusica() {
-        musica.volume = 0.5; // Deixa o som agradável
-        musica.play().catch(error => {
-            console.log("Aguardando interação real...");
-        });
-
-        // Remove os ouvintes para não tentar recomeçar
-        document.removeEventListener('click', iniciarMusica);
-        document.removeEventListener('touchstart', iniciarMusica);
-        window.removeEventListener('scroll', iniciarMusica);
-    }
-
-    // Aciona a música com clique, toque ou rolar a tela
-    document.addEventListener('click', iniciarMusica);
-    document.addEventListener('touchstart', iniciarMusica);
-    window.addEventListener('scroll', iniciarMusica);
+document.addEventListener('click', iniciarMusica);
+document.addEventListener('touchstart', iniciarMusica);
+window.addEventListener('scroll', iniciarMusica);
 </script>
 </body>
 </html>

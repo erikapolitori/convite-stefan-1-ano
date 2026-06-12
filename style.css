@@ -1,79 +1,24 @@
-/* --- ESTILO GERAL: MUDANDO DO AMALERINHO PARA MAR --- */
-/* --- ESTILO GERAL (Seu Fundo para PC e Tablet Lardo) --- */
-/* --- ESTILO PARA COMPUTADOR (Mantenha como está) --- */
+
 body {
     background-image: url('https://wallpapercave.com/wp/wp11796393.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: top center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-color: #0b1e3b;
+    background-color: #0b1e3b; /* Azul escuro caso a imagem falhe */
+
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     margin: 0;
-}
-
-/* --- AJUSTE PARA CELULAR (SUBSTITUA O ANTIGO POR ESTE) --- */
-@media (max-width: 600px) {
-    body {
-        /* Limpa o mapa azul e coloca a imagem vermelha */
-        background-image: url('mapa2.png') !important; 
-        
-        /* 'contain' faz o desenho caber na largura sem esticar */
-        background-size: contain !important;
-        
-        /* Posiciona no topo para o logo aparecer primeiro */
-        background-position: top center !important;
-        background-repeat: no-repeat !important;
-        
-        /* Cor que completa o fundo onde a imagem acaba */
-        background-color: #fdf3c0 !important; 
-        
-        background-attachment: scroll !important;
-        padding: 10px;
-    }
-
-    .topo-stefan {
-        background-color: transparent !important;
-        /* Esse espaço empurra o Stefan para baixo do logo One Piece */
-        margin-top: 180px !important; 
-    }
-    @media (max-width: 600px) {
-    /* ... mantenha as outras regras do body que já criamos ... */
-
-    /* --- ESTILO DA TRANSPARÊNCIA BRANCA ATRÁS DA FOTO --- */
-    .topo-stefan {
-        /* Branca com 50% de transparência (efeito vidro) */
-        background-color: rgba(255, 255, 255, 0.5) !important;
-        
-        /* Arredondamos os cantos para ficar mais suave */
-        border-radius: 15px; 
-        
-        /* Uma borda branca fina para dar um acabamento chique */
-        border: 2px solid #ffffff; 
-        
-        /* Ajustes de espaçamento para centralizar a foto */
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 15px;
-        box-sizing: border-box; /* Garante que o padding não aumente a largura */
-        
-        /* Mantemos o espaço para não cobrir o logo One Piece no topo */
-        margin-top: 180px !important; 
-        
-        /* Uma leve sombra para dar profundidade */
-        box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
-    }
-}
+    min-height: 100vh;
 }
 
 .total {
     max-width: 500px;
+    width: 100%;
     text-align: center;
 }
 
@@ -121,29 +66,37 @@ body {
 }
 
 .subtitulo {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    color: #ffd100;
+    font-family: 'Trade Winds', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 0;
 }
 
 .nome-festa {
     font-family: 'Trade Winds', cursive;
     color: #e63946;
+    font-size: 24px;
+    text-shadow: 1px 1px 0px #ffd100;
 }
 
-/* --- BOTÃO CONFIRMAR --- */
+.mensagem-one-piece p,
+.missao-tripulacao p {
+    line-height: 1.55;
+}
+
 .botao-confirmar-pirata {
-    background-color: #ffd100; /* Amarelo do chapéu */
+    background-color: #ffd100;
     color: #333;
-    border: none;
+    border: 2px solid #ffffff;
     padding: 15px 30px;
-    border-radius: 50px; /* Mais arredondado */
+    border-radius: 50px;
     font-weight: bold;
     font-family: 'Trade Winds', cursive;
     cursor: pointer;
     margin-top: 20px;
     width: 100%;
-    box-shadow: 0px 4px 0px #b89300; /* Efeito de profundidade no botão */
+    box-shadow: 0px 4px 0px #b89300;
     transition: all 0.2s;
 }
 
@@ -160,7 +113,7 @@ body {
 
 .titulo-form {
     font-family: 'Pirata One', cursive;
-    font-size: 24px;
+    font-size: 28px;
     color: #ffd100;
     text-align: center;
 }
@@ -178,6 +131,7 @@ body {
 
 .campo input, .campo select {
     width: 100%;
+    box-sizing: border-box;
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -227,8 +181,14 @@ input:focus, select:focus {
 }
 
 .btn-mapa {
-    width: 100%; /* Faz o botão ocupar toda a largura do cartão */
-    box-sizing: border-box; /* Garante que o preenchimento não aumente o botão */
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 /* Cores específicas para cada botão */
@@ -279,46 +239,43 @@ input:focus, select:focus {
     margin-top: -15px; /* Puxa um pouquinho para cima, para ficar colado no nome */
     text-transform: lowercase; /* Mantém tudo em minúsculo para seguir o estilo */
 }
-/* --- ESTILO GERAL (Mantenha o que você já tem para PC) --- */
-body {
-    background-image: url('https://wallpapercave.com/wp/wp11796393.jpg');
-    background-size: cover;
-    background-position: top center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-color: #0b1e3b; /* Azul escuro caso a imagem falhe */
 
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    margin: 0;
-    min-height: 100vh;
-}
-
-/* --- O AJUSTE MÁGICO PARA CELULARES (Media Query) --- */
 @media (max-width: 600px) {
     body {
-        /* 1. Mudamos para uma imagem de textura (pergaminho antigo) */
-        background-image: url('https://img.freepik.com/fotos-gratis/textura-de-papel-antigo-e-vintage_23-2148871668.jpg');
-        
-        /* 2. Fazemos essa textura cobrir a tela inteira, sem barras vazias */
-        background-size: cover;
-        background-position: center center;
-        background-attachment: scroll; /* Melhora a performance em alguns celulares */
-        
-        /* 3. Ajuste de espaçamento para ficar mais colado nas bordas */
+        background-image: url('mapa2.png');
+        background-size: contain;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-color: #fdf3c0;
+        background-attachment: scroll;
         padding: 10px;
     }
 
-    /* 4. Vamos garantir que o topo (com o logo) tenha uma área de destaque */
     .topo-stefan {
-        background-color: rgba(11, 30, 59, 0.8); /* Um leve azul transparente atrás do logo */
-        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.55);
+        border-radius: 15px;
+        border: 2px solid #ffffff;
         padding: 15px;
         width: 100%;
         box-sizing: border-box;
+        margin-top: 180px;
         margin-bottom: 20px;
     }
+}
+
+.missao-tripulacao {
+    margin-top: 25px;
+    padding: 28px 20px;
+    border: 2px dashed #d4a017;
+    border-radius: 8px;
+    text-align: center;
+    background-color: rgba(253, 245, 210, 0.08);
+}
+
+.lema-japones {
+    color: #ffd100;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+    letter-spacing: 3px;
 }
