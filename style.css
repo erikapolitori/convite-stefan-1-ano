@@ -194,15 +194,21 @@ input:focus, select:focus {
 /* Cores específicas para cada botão */
 .google { background-color: #ffffff; color: #4285F4; border: 1px solid #4285F4; }
 .waze { background-color: #33ccff; color: white; }
-.copiar { background-color: #fdf5d2; color: #333; }
 
+.copiar {
+    background-color: #fdf5d2;
+    color: #333;
+    padding: 12px;
+    font-size: 14px;
+}
 .btn-mapa:active { transform: scale(0.98); }
 /* Container do Mapa para garantir que ele seja responsivo */
 .mapa-container {
     width: 100%;
-    border-radius: 8px; /* Cantos arredondados igual à imagem */
-    overflow: hidden; /* Garante que o mapa siga o arredondado */
-    border: 2px solid #d4a017; /* Borda dourada temática */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #d4a017;
+    margin-top: 16px;
 }
 
 /* Estilo para os botões menores e lado a lado */
@@ -210,12 +216,13 @@ input:focus, select:focus {
     display: flex;
     gap: 10px;
     width: 100%;
+    margin-top: 15px;
 }
 
 .btn-mapa.miniatura {
-    flex: 1; /* Faz os dois botões terem o mesmo tamanho */
-    padding: 10px;
-    font-size: 13px;
+    flex: 1;
+    padding: 14px 10px;
+    font-size: 14px;
     border-radius: 5px;
 }
 /* --- ESTILO PARA O "1 ANO" (IGUAL AO STEFAN) --- */
@@ -278,4 +285,10 @@ input:focus, select:focus {
     font-weight: bold;
     margin-top: 10px;
     letter-spacing: 3px;
+}
+
+.secao-expedicao {
+    padding: 28px 24px;
+    border: 3px solid #d4a017;
+    border-radius: 8px;
 }
